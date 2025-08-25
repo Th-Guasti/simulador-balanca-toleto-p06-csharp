@@ -76,10 +76,4 @@ Para mudar para o protocolo P05:
 
 Thales de Souza Guasti  
 Email: thaslesouza@gmail.com  
-GitHub: [https://github.com/th-guasti](https://github.com/th-guasti)
-
----
-
-## Licença
-
-Coloque aqui sua licença preferida, por exemplo MIT License.
+Linkedin: www.linkedin.com/in/thales-de-souza-guasti-272722290
