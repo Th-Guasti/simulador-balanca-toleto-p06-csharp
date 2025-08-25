@@ -1,0 +1,26 @@
+# Binários e objetos de compilação
+bin/
+obj/
+
+# Arquivos de usuário do Visual Studio
+*.user
+*.suo
+*.cache
+*.log
+
+# Pastas temporárias
+.vs/
+
+# Pacotes NuGet baixados automaticamente
+packages/
+
+# Arquivos gerados de build e outros temporários
+*.ilk
+*.meta
+*.pdb
+*.idb
+*.exp
+
+# Configurações locais
+*.opendb
+*.VC.db
