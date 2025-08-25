@@ -196,6 +196,8 @@ namespace Simulador_da_balança
             if (lblPeca.Visible)
             {
                 pesoAnterior = decimal.TryParse(txtSimulacaoPeso.Text.Replace(',', '.'), NumberStyles.Any, CultureInfo.InvariantCulture, out pesoAnterior) ? pesoAnterior : 0; //armazena o peso atual antes de remover a peça
+                btnPeca.Text = "Colocar peça na Balança";
+                txtSimulacaoPeso.Text = "0.000";
                 lblPeca.Visible = false;
             }
             else
