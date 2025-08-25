@@ -72,6 +72,38 @@ Para mudar para o protocolo P05:
 
 ---
 
+## Teste
+
+Esta seção guia você para realizar testes práticos com o Simulador de Balança Toledo, validando a comunicação via porta serial e o protocolo P06.
+
+### Passo a passo para o teste
+
+1. **Abra o simulador** e verifique se ele está conectado à porta serial correta (padrão COM4).
+
+2. **Abra um terminal serial** (no meu caso fiz o teste pelo Termite) e conecte-se à porta serial oposta (ex: COM3).
+
+3. **Digite o comando de solicitação de peso** conforme o protocolo P06:  
+   - Envie o byte `0x02` (STX).  
+   - Para fazer isso, habilite o modo hexadecimal no terminal e insira `02`, então pressione Enter.
+
+4. **Observe a resposta do simulador no terminal**:  
+   - O simulador deve enviar o peso atual na interface, formatado como texto ASCII, encapsulado entre os caracteres `[STX]` e `[ETX]`.  
+   - Exemplo de pacote recebido: `02 31 32 2E 34 35 30 03` (que representa o peso "12.450").
+
+5. **Altere o peso simulado na interface do simulador** e repita o envio do comando para verificar a atualização da resposta.
+
+6. **Use os botões** de colocar/remover peça e ajustar o peso para simular diferentes cenários.
+
+---
+
+### Dicas
+
+- Certifique-se de que as configurações da porta serial (baud rate, bits, paridade, stop bits) estejam iguais entre simulador e o terminal serial.
+
+- Use terminais capazes de enviar e mostrar dados em modo hexadecimal para melhor visualização.
+
+---
+
 ## Contato
 
 Thales de Souza Guasti  
