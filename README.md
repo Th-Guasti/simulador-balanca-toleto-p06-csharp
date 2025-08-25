@@ -109,3 +109,8 @@ Esta seção guia você para realizar testes práticos com o Simulador de Balan�
 Thales de Souza Guasti  
 Email: thaslesouza@gmail.com  
 Linkedin: www.linkedin.com/in/thales-de-souza-guasti-272722290
+
+<img width="358" height="517" alt="image" src="https://github.com/user-attachments/assets/fff1066e-7b09-4443-b6a0-d38d88163dc9" />
+<img width="470" height="307" alt="image" src="https://github.com/user-attachments/assets/c6041ecc-b9b3-48c8-bbba-1e5a61f49eca" />
+
+
