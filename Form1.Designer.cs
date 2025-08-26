@@ -311,7 +311,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(60, 13);
             this.label2.TabIndex = 14;
-            this.label2.Text = "v1.0 | 2025";
+            this.label2.Text = "v1.02 | 2025";
             // 
             // txtTitulo
             // 
