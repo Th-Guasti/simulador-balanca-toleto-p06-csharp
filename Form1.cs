@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.IO.Ports;
 using System.Windows.Forms;
 using System.Globalization;
@@ -31,7 +31,7 @@ namespace Simulador_da_balança
         {
             InitializeComponent(); //carrega a interface visual
             AbrirPortaSerial("COM4"); //abre a porta serial
-            txtSimulacaoPeso.Text = "0.000";
+            txtSimulacaoPeso.Text = "00.00";
 
             //evento de mudança de texto do campo de peso
             txtSimulacaoPeso.TextChanged += TxtSimulacaoPeso_TextChanged;
@@ -116,7 +116,7 @@ namespace Simulador_da_balança
                     peso = 0; //se falhar, define o peso como 0
                 }
 
-                string pesoFormatado = peso.ToString("00.000").Replace(',', '.'); //formata o peso com 2 dígitos antes e 3 depois da vírgula
+                string pesoFormatado = peso.ToString("00.00").Replace(',', '.'); //formata o peso com 2 dígitos antes e 3 depois da vírgula
 
                 byte[] resposta = new byte[1 + pesoFormatado.Length + 1]; //cria um array de bytes para a resposta (STX + peso + ETX)
 
@@ -150,9 +150,9 @@ namespace Simulador_da_balança
             //atualiza o label dinâmico com o peso formatado
             if (decimal.TryParse(txtSimulacaoPeso.Text, NumberStyles.Any, CultureInfo.InvariantCulture, out peso))
             {
-                lblDinamico.Text = peso.ToString("00.000", CultureInfo.InvariantCulture); //formata o peso com 2 dígitos antes e 3 depois da vírgula
+                lblDinamico.Text = peso.ToString("00.000", CultureInfo.InvariantCulture); //formata o peso com 2 dígitos antes e 2 depois da vírgula
             }
-            else //se a conversão falhar, exibe 00.000
+            else //se a conversão falhar, exibe 00.00
             {
                 lblDinamico.Text = "00.000";
             }
@@ -165,11 +165,11 @@ namespace Simulador_da_balança
             if (decimal.TryParse(txtSimulacaoPeso.Text.Replace(',', '.'), NumberStyles.Any, CultureInfo.InvariantCulture, out peso))
             {
                 peso += 0.100m;
-                txtSimulacaoPeso.Text = peso.ToString("0.000", CultureInfo.InvariantCulture);
+                txtSimulacaoPeso.Text = peso.ToString("00.00", CultureInfo.InvariantCulture);
             }
             else
             {
-                txtSimulacaoPeso.Text = "0.000";
+                txtSimulacaoPeso.Text = "00.00";
             }
         }
 
@@ -180,11 +180,11 @@ namespace Simulador_da_balança
             {
                 peso -= 0.100m;
                 if (peso < 0) peso = 0;
-                txtSimulacaoPeso.Text = peso.ToString("0.000", CultureInfo.InvariantCulture);
+                txtSimulacaoPeso.Text = peso.ToString("00.00", CultureInfo.InvariantCulture);
             }
             else
             {
-                txtSimulacaoPeso.Text = "0.000";
+                txtSimulacaoPeso.Text = "00.00";
             }
         }
 
@@ -197,14 +197,14 @@ namespace Simulador_da_balança
             {
                 pesoAnterior = decimal.TryParse(txtSimulacaoPeso.Text.Replace(',', '.'), NumberStyles.Any, CultureInfo.InvariantCulture, out pesoAnterior) ? pesoAnterior : 0; //armazena o peso atual antes de remover a peça
                 btnPeca.Text = "Colocar peça na Balança";
-                txtSimulacaoPeso.Text = "0.000";
+                txtSimulacaoPeso.Text = "00.00";
                 lblPeca.Visible = false;
             }
             else
             {
                 lblPeca.Visible = true;
                 btnPeca.Text = "Remover peça da Balança";
-                txtSimulacaoPeso.Text = pesoAnterior.ToString("0.000", CultureInfo.InvariantCulture);
+                txtSimulacaoPeso.Text = pesoAnterior.ToString("00.00", CultureInfo.InvariantCulture);
             }
         }
 
@@ -231,7 +231,7 @@ namespace Simulador_da_balança
             if (peso < 0m) peso = 0m; 
             if (peso > 150m) peso = 150m;
 
-            txtSimulacaoPeso.Text = peso.ToString("0.000", CultureInfo.InvariantCulture);
+            txtSimulacaoPeso.Text = peso.ToString("00.00", CultureInfo.InvariantCulture);
         }
     }
 }
